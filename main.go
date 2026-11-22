@@ -146,5 +146,16 @@ func main() {
 			order = append(order, v)
 		}
 		freqMap[v]++
+
+	}
+	foundMap := false
+	for _, v := range order {
+		if freqMap[v] > 1 {
+			fmt.Printf("Значення %.2f зустрічається %d разів\n", v, freqMap[v])
+			foundMap = true
+		}
+	}
+	if !foundMap {
+		fmt.Println("Повторів не знайдено.")
 	}
 }
